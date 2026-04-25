@@ -4,13 +4,14 @@ function calcular(){
     let ingresos = recuperarFloat("txtIngresos");
     let egresos = recuperarFloat("txtEgresos");
 
+    // DISPONIBLE
     let disponible = calcularDisponible(ingresos, egresos);
 
     document.getElementById("spnDisponible").innerText =
         "USD " + disponible.toFixed(2);
 
-    // CAPACIDAD DE PAGO (ejemplo: 30% del disponible)
-    let capacidadPago = disponible * 0.30;
+    // ✅ CAPACIDAD DE PAGO (USANDO LA FUNCIÓN)
+    let capacidadPago = calcularCapacidadPago(disponible);
 
     document.getElementById("spnCapacidadPago").innerText =
         "USD " + capacidadPago.toFixed(2);
