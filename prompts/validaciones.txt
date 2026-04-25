@@ -1,0 +1,16 @@
+agregar todas las validaciones que considere necesarias para
+mi formulario:
+
+Camos Obligatorios: Ningún campo puede quedar vacío.
+
+Tipos de Datos: Los valores deben ser numéricos y positivos.
+
+Montos Lógicos:
+
+Monto: Mínimo $500, máximo $100,000.
+
+Plazo: Mínimo 1 año, máximo 30 años.
+
+Tasa: Mínimo 1%, máximo 35%.
+
+Coherencia Financiera: Los egresos no pueden ser mayores o iguales a los ingresos (el disponible debe ser real).
