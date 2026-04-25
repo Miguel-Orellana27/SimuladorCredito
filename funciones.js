@@ -42,3 +42,11 @@ function calcularTotalPagar(monto, interes){
     let total = monto + interes + 100; // +100 por impuestos y SOLCA
     return total;
 }
+function calcularCuotaMensual(total, plazoAnios){
+    if(isNaN(total) || isNaN(plazoAnios)){
+        return 0;
+    }
+
+    let meses = plazoAnios * 12;
+    return meses > 0 ? total / meses : 0;
+}
