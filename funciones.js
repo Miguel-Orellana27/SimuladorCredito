@@ -50,3 +50,6 @@ function calcularCuotaMensual(total, plazoAnios){
     let meses = plazoAnios * 12;
     return meses > 0 ? total / meses : 0;
 }
+function aprobarCredito(capacidadPago, cuotaMensual){
+    return capacidadPago > cuotaMensual;
+}
