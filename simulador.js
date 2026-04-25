@@ -21,7 +21,7 @@ function calcular(){
     let plazo = recuperarFloat("txtPlazo");
     let tasa = recuperarFloat("txtTasaInteres");
 
-    // INTERÉS
+    // INTERÉS SIMPLE
     let interes = calcularInteresSimple(monto, tasa, plazo);
 
     document.getElementById("spnInteresPagar").innerText =
@@ -33,9 +33,8 @@ function calcular(){
     document.getElementById("spnTotalPrestamo").innerText =
         "USD " + total.toFixed(2);
 
-    // CUOTA MENSUAL
-    let meses = plazo * 12;
-    let cuota = meses > 0 ? total / meses : 0;
+    // CUOTA MENSUAL (USANDO FUNCIÓN)
+    let cuota = calcularCuotaMensual(total, plazo);
 
     document.getElementById("spnCuotaMensual").innerText =
         "USD " + cuota.toFixed(2);
