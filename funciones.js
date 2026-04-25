@@ -31,3 +31,10 @@ function calcularCapacidadPago(montoDisponible){
 
     return montoDisponible * 0.5;
 }
+function calcularInteresSimple(monto, tasa, plazoAnios){
+    if(isNaN(monto) || isNaN(tasa) || isNaN(plazoAnios)){
+        return 0;
+    }
+
+    return monto * (tasa / 100) * plazoAnios;
+}
