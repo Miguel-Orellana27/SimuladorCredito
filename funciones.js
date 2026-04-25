@@ -23,3 +23,11 @@ function recuperarFloat(idComponente){
 
     return valorFloat;
 }
+
+function calcularCapacidadPago(montoDisponible){
+    if(isNaN(montoDisponible)){
+        return 0;
+    }
+
+    return montoDisponible * 0.5;
+}
