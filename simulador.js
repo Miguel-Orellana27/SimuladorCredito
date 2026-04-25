@@ -10,7 +10,7 @@ function calcular(){
     document.getElementById("spnDisponible").innerText =
         "USD " + disponible.toFixed(2);
 
-    // CAPACIDAD DE PAGO (50%)
+    // CAPACIDAD DE PAGO
     let capacidad = calcularCapacidadPago(disponible);
 
     document.getElementById("spnCapacidadPago").innerText =
@@ -21,26 +21,31 @@ function calcular(){
     let plazo = recuperarFloat("txtPlazo");
     let tasa = recuperarFloat("txtTasaInteres");
 
-    // INTERÉS SIMPLE
+    // INTERÉS
     let interes = calcularInteresSimple(monto, tasa, plazo);
 
     document.getElementById("spnInteresPagar").innerText =
         "USD " + interes.toFixed(2);
 
-    // TOTAL A PAGAR (con impuestos)
+    // TOTAL A PAGAR
     let total = calcularTotalPagar(monto, interes);
 
     document.getElementById("spnTotalPrestamo").innerText =
         "USD " + total.toFixed(2);
 
-    // CUOTA MENSUAL (USANDO FUNCIÓN)
+    // CUOTA MENSUAL
     let cuota = calcularCuotaMensual(total, plazo);
 
     document.getElementById("spnCuotaMensual").innerText =
         "USD " + cuota.toFixed(2);
 
-    // ESTADO DEL CRÉDITO
-    let estado = cuota <= capacidad ? "APROBADO" : "RECHAZADO";
+    // ✅ APROBACIÓN DEL CRÉDITO (USANDO FUNCIÓN)
+    let aprobado = aprobarCredito(capacidad, cuota);
 
-    document.getElementById("spnEstadoCredito").innerText = estado;
+    // MOSTRAR RESULTADO
+    if(aprobado){
+        document.getElementById("spnEstadoCredito").innerText = "CREDITO APROBADO";
+    }else{
+        document.getElementById("spnEstadoCredito").innerText = "CREDITO RECHAZADO";
+    }
 }
