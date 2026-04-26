@@ -13,6 +13,15 @@
             <img src="logo.png" alt="NovaBank Logo" class="logo">
             <h1>NovaBank</h1>
             <p>Simulador de Crédito Empresarial</p>
+
+            <!-- ✅ MENÚ AGREGADO -->
+            <nav class="menu">
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Simulador</a></li>
+                    <li><a href="#">Gastos</a></li> <!-- 👈 NUEVO -->
+                </ul>
+            </nav>
         </div>
 
         <div class="card">
@@ -22,9 +31,19 @@
             <input type="text" id="txtIngresos" placeholder="Ej: 3000">
             <span id="errIngresos" class="error-msg"></span>
 
-            <label>Egresos</label>
-            <input type="text" id="txtEgresos" placeholder="Ej: 1500">
-            <span id="errEgresos" class="error-msg"></span>
+            <label>Arriendo</label>
+            <input type="text" id="txtArriendo" placeholder="Ej: 500">
+            <span id="errArriendo" class="error-msg"></span>
+
+            <label>Alimentación</label>
+            <input type="text" id="txtAlimentacion" placeholder="Ej: 300">
+            <span id="errAlimentacion" class="error-msg"></span>
+
+            <label>Varios</label>
+            <input type="text" id="txtVarios" placeholder="Ej: 200">
+            <span id="errVarios" class="error-msg"></span>
+
+            <p>Total gastos: <span id="spnTotalGastos">USD 0.00</span></p>
 
             <div class="result-box">
                 <p>Disponible: <span id="spnDisponible">USD 0.00</span></p>
@@ -34,15 +53,15 @@
             <h2>Solicitud de crédito</h2>
 
             <label>Monto</label>
-            <input type="text" id="txtMonto" placeholder="Min: 500 - Max: 100000">
+            <input type="text" id="txtMonto">
             <span id="errMonto" class="error-msg"></span>
 
             <label>Plazo (años)</label>
-            <input type="text" id="txtPlazo" placeholder="1 a 30 años">
+            <input type="text" id="txtPlazo">
             <span id="errPlazo" class="error-msg"></span>
 
             <label>Tasa (%)</label>
-            <input type="text" id="txtTasaInteres" placeholder="Ej: 12">
+            <input type="text" id="txtTasaInteres">
             <span id="errTasaInteres" class="error-msg"></span>
 
             <div class="result-box">
@@ -54,7 +73,7 @@
 
             <div class="buttons">
                 <button onclick="calcular()">Calcular Crédito</button>
-                <button type="button" class="secondary" onclick="reiniciarSimulador()">Limpiar</button>
+                <button type="button" onclick="reiniciarSimulador()">Limpiar</button>
             </div>
         </div>
     </div>
